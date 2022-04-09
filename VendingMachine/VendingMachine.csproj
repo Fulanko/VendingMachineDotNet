@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="NDesk.Options" />
+    <None Remove="Mono.Options" />
+    <None Remove="Microsoft.CodeCoverage" />
+    <None Remove="Translations\" />
+    <None Remove="StockFiles\" />
+    <None Remove="VendingMachine\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Mono.Options" Version="6.12.0.148" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Translations\" />
+    <Folder Include="StockFiles\" />
+    <Folder Include="VendingMachine\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Translations\languageEN.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Translations\languageFR.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Translations\languageDE.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="StockFiles\stockFile.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Program.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+</Project>
