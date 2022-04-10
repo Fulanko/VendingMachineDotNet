@@ -62,7 +62,6 @@ namespace VendingMachine
             {
                 customerBalance += coin;
                 coinInventory[coin]++;
-                PrintInventory();
             }
             else
             {
@@ -85,7 +84,6 @@ namespace VendingMachine
                 }
             }
             customerBalance = 0;
-            PrintInventory();
             return change;
         }
 
@@ -95,7 +93,6 @@ namespace VendingMachine
             {
                 customerBalance -= amount;
             }
-            PrintInventory();
         }
 
         public bool HasExactChange(decimal price)
@@ -122,14 +119,6 @@ namespace VendingMachine
         private bool IsValidCoin(decimal value)
         {
             return coinInventory.ContainsKey(value);
-        }
-
-        public void PrintInventory()
-        {
-            foreach (var coin in coinInventory)
-            {
-                Console.WriteLine($"{coin.Key}: {coin.Value}");
-            }
         }
 
     }
