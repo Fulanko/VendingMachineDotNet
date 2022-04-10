@@ -17,3 +17,6 @@ Code coverage report generated using [ReportGenerator](https://github.com/daniel
 dotnet test --collect:"XPlat Code Coverage"
 reportgenerator -reports:"./coverage.cobertura.xml" -targetdir:"coveragereport" -reporttypes:Html
 ```
+
+## Code Coverage
+![code coverage](./coverage.png)
